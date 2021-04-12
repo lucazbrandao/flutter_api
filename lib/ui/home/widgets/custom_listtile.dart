@@ -4,7 +4,8 @@ import 'package:flutter_api/model/todo_model.dart';
 class CustomListTile extends StatelessWidget {
 
   final TodoModel model;
-  const CustomListTile({Key key, this.model}) : super(key: key);
+  const CustomListTile({Key? key, required this.model}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

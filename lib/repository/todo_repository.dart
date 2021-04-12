@@ -11,11 +11,11 @@ class TodoRepository {
       await Dio().get("https://jsonplaceholder.typicode.com/todos/");
 
       final list =
-      (response.data as List).map((e) => TodoModel.fromJson(e)).toList();
+      (response.data as List).map((e) => TodoModel.fromMap(e)).toList();
       return list;
     } on DioError catch (e) {
       print(e);
-      throw DioError(error: 'ERRO CUSTOMIZADO BASE');
+      throw Exception('ERRO CUSTOMIZADO BASE');
     } on Exception catch (ex) {
       print(ex);
       rethrow;

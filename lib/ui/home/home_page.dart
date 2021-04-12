@@ -8,6 +8,7 @@ import '../../model/todo_model.dart';
 class HomePage extends StatelessWidget {
 
   final _repository = TodoRepository();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +19,9 @@ class HomePage extends StatelessWidget {
         builder: (_, snapshot) {
           return snapshot.hasData
               ? ListView.builder(
-                  itemCount: snapshot.data.length,
+                  itemCount: snapshot.data!.length,
                   itemBuilder: (_, idx) {
-                    return CustomListTile(model: snapshot.data[idx]);
+                    return CustomListTile(model: snapshot.data![idx]);
                   },
                 )
               : snapshot.hasError
